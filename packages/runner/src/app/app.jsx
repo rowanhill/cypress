@@ -137,7 +137,8 @@ class App extends Component {
         width: iframesSizeNode.style.width,
         height: iframesSizeNode.style.height,
         transform: iframesSizeNode.style.transform,
-        left: containerNode.style.left,
+        containerLeft: containerNode.style.left,
+        iframesLeft: iframesNode.style.left,
       }
 
       const messageNode = findDOMNode(this.refs.message)
@@ -175,8 +176,8 @@ class App extends Component {
       screenshotHelperPixels.style.display = 'block'
 
       containerNode.className = containerNode.className.replace(' screenshotting', '')
-      containerNode.style.left = prevAttrs.left
-      iframesNode.style.left = prevAttrs.left
+      containerNode.style.left = prevAttrs.containerLeft
+      iframesNode.style.left = prevAttrs.iframesLeft
 
       iframesNode.style.top = prevAttrs.top
       iframesNode.style.backgroundColor = null
